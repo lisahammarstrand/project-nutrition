@@ -1,13 +1,13 @@
-import React, { useRef, useState, useLayoutEffect } from "react";
-import Quagga from "quagga";
+import React, { useRef, useState, useLayoutEffect } from "react"
+import Quagga from "quagga"
 
 export const BarcodeScanner = ({ className, onDetected }) => {
-  const [initializing, setInitializing] = useState(true);
-  const cameraDivRef = useRef();
+  const [initializing, setInitializing] = useState(true)
+  const cameraDivRef = useRef()
 
   Quagga.onDetected((data) => {
-    onDetected(data.code);
-  });
+    onDetected(data.codeResult.code)
+  })
 
   useLayoutEffect(() => {
     Quagga.init(
@@ -23,18 +23,18 @@ export const BarcodeScanner = ({ className, onDetected }) => {
       },
       (err) => {
         if (err) {
-          console.error("Failed to initialize reader", err);
-          return;
+          console.error("Failed to initialize reader", err)
+          return
         }
-        Quagga.start();
-        setInitializing(false);
+        Quagga.start()
+        setInitializing(false)
       }
-    );
+    )
 
     return () => {
-      Quagga.stop();
-    };
-  }, []);
+      Quagga.stop()
+    }
+  }, [])
 
   return (
     <>
