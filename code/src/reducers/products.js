@@ -5,16 +5,16 @@ import { ui } from 'reducers/ui'
 export const products = createSlice({
   name: 'products',
   initialState: {
-    all: []
+    productinfo: {}
   },
   reducers: {
     setProducts: (state, action) => {
-      state.all = action.payload
+      state.productinfo = action.payload
     }
   }
 })
 
-export const onDetected = (code) => {
+export const fetchProductData = (code) => {
   return (dispatch) => {
     dispatch(ui.actions.setLoading(true))
     fetch(`https://world.openfoodfacts.org/api/v0/product/${code}.json`)
