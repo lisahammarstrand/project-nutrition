@@ -4,7 +4,7 @@ import "./header.css"
 export const Header = () => {
   return (
     <header>
-      <h1>🌱 Vegan, vegetarian and from where? 🌱</h1>
+      <h1>🌱 Food scanner 🌱</h1>
     </header>
   )
 }

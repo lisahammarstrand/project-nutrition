@@ -1,12 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { ui } from 'reducers/ui'
 
-
 export const products = createSlice({
   name: 'products',
   initialState: {
     productinfo: null
-    // productinfo: {}
   },
   reducers: {
     setProducts: (state, action) => {

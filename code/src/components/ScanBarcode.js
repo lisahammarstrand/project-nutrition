@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import { BarcodeScanner } from 'components/BarcodeScanner'
-import { useDispatch } from 'react-redux'
-
 
 export const ScanBarcode = ({ onDetected }) => {
   const [showScanner, setShowScanner] = useState(false)
-  // const dispatch = useDispatch()
 
   return (
-    <>
+    <div className='scan-barcode'>
+      <h3>Check if your food products are vegetarian, vegan and where they come from!</h3>
       {!showScanner && (
         <button type="button" onClick={() => setShowScanner(true)}>
-          Show scanner
+          SHOW SCANNER
         </button>
       )}
 
@@ -22,6 +20,6 @@ export const ScanBarcode = ({ onDetected }) => {
           onDetected(code)
         }} />
       )}
-    </>
+    </div>
   )
 }
