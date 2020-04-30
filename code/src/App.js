@@ -32,7 +32,7 @@ export const App = () => {
 
 
   return (
-    <div>
+    <div className='app'>
       <Provider store={store}>
         <Home />
       </Provider>

@@ -1,0 +1,27 @@
+footer {
+  background-color: #5e9c7a;
+  color: white; 
+  padding: 32px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-section {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+p {
+  font-size: 14px;
+}
+
+a {
+  color: white;
+}

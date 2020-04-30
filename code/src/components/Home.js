@@ -3,7 +3,10 @@ import { ScanBarcode } from "components/ScanBarcode"
 // import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Provider, useDispatch } from 'react-redux'
 import { ui } from 'reducers/ui'
-import { products, fetchProductData } from 'reducers/products'
+import { products, fetchProductInfo } from 'reducers/products'
+import { Header } from 'components/Header'
+import { Footer } from 'components/Footer'
+import { ScanResultPage } from 'components/ScanResultPage'
 
 
 // const onDetected = (code) => {
@@ -27,33 +30,38 @@ export const Home = () => {
   const onDetected = (code) => {
 
     console.log(`Code: ${code}`)
-    dispatch(fetchProductData(code))
+    dispatch(fetchProductInfo(code))
   }
 
 
   return (
     <div>
 
+      <Header />
       {/*  <BrowserRouter>
           <Switch>
             <Route path='/' exact> */}
-      <label>
-        {" "}
-              Test codes here:{" "}
-        <input type="text" onChange={(e) => onDetected(e.target.value)}></input>
-      </label>
-      <p>
-        {" "}
-              Use the field above to test barcodes manually and keep an eye on your
-              console in the browser. i.e. Type 7311070347272 - Pågen Gifflar. Yum
+      <main>
+        <label>
+          {" "}
+              Test barcode manually here:{" "}
+          <input type="text" onChange={(e) => onDetected(e.target.value)}></input>
+        </label>
+        <p>
+          {" "}
+              7311070347272 - Pågen Gifflar. Yum!
             </p>
-      <ScanBarcode onDetected={onDetected} />
+        <ScanBarcode onDetected={onDetected} />
+
+        <ScanResultPage />
+      </main>
       {/* </Route>
             <Route path='/product/:productId'>
                <ScanBarcode />
             </Route>
           </Switch>
         </BrowserRouter> */}
+      <Footer />
 
     </div >
   );

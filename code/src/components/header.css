@@ -1,0 +1,13 @@
+header {
+  height: 60px;
+  background-color: #599472;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 10px 10px 20px;
+}
+
+h1 {
+  font-size: 28px;
+}
