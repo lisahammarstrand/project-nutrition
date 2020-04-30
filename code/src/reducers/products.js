@@ -1,26 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { ui } from 'reducers/ui'
+import { ui } from './ui'
 
 
 export const products = createSlice({
   name: 'products',
   initialState: {
-    all: []
+    productinfo: {}
   },
   reducers: {
     setProducts: (state, action) => {
-      state.all = action.payload
+      state.productinfo = action.payload
     }
   }
 })
 
-export const onDetected = (code) => {
+// This is a thunk with a loader
+export const fetchProductInfo = (code) => {
   return (dispatch) => {
     dispatch(ui.actions.setLoading(true))
     fetch(`https://world.openfoodfacts.org/api/v0/product/${code}.json`)
       .then((data) => data.json())
       .then((json) => {
         console.log(json);
+        dispatch(products.actions.setProducts(json))
+        dispatch(ui.actions.setLoading(false))
       })
   }
 }

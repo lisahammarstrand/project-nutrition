@@ -1,19 +1,21 @@
 import React from "react"
 import { ScanBarcode } from "components/ScanBarcode"
-// import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Provider, useDispatch } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { ui } from 'reducers/ui'
 import { products } from 'reducers/products'
+import { ScanResult } from 'pages/ScanResultPage' //NY
 // import { onDetected } from 'reducers/products'
+import { Home } from 'components/Home'
 
-const reducer = combineReducers({
+/* const reducer = combineReducers({
   ui: ui.reducer,
   products: products.reducer
 })
 
-export const store = configureStore({ reducer })
-const dispatch = useDispatch()
+export const store = configureStore({ reducer }) */
+
 
 // const onDetected = (code) => {
 //   console.log(`Code: ${code}`)
@@ -27,11 +29,12 @@ const dispatch = useDispatch()
 export const App = () => {
   return (
     <div>
-      <Provider store={store}>
-        {/*  <BrowserRouter>
+      {/*  <Provider store={store} /> */}
+      <Home />
+      {/*  <BrowserRouter>
           <Switch>
             <Route path='/' exact> */}
-        <label>
+      {/*  <label>
           {" "}
               Test codes here:{" "}
           <input type="text" onChange={(e) => onDetected(e.target.value)}></input>
@@ -42,13 +45,15 @@ export const App = () => {
               console in the browser. i.e. Type 7311070347272 - Pågen Gifflar. Yum
             </p>
         <ScanBarcode />
-        {/* </Route>
+        <ScanResult /> */}
+      {/* </Route>
             <Route path='/product/:productId'>
                <ScanBarcode />
             </Route>
           </Switch>
         </BrowserRouter> */}
-      </Provider>
+
+      {/*  </Provider> */}
     </div >
   );
 };
