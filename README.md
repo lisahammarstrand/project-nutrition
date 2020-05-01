@@ -1,13 +1,12 @@
 # Project Nutrition
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a project in the Technigo frontend boot camp.
+The objective is to build an app which scans barcodes on food packages to retrieve the product name and nutritional information. In this project we'll practice to connect the different techniques introduced wihtin React and Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+In this project we practiced pair programming which was really helpful when approaching the different problems and challenges. It was a real challenge to connect the "dots" between different techniques such as Redux, Thunks and React, and to fetch and show the data from the API that was very inconcistent. We started out with the amition to show various things but ended up cutting it short to reach a working app. If we had more time I think we would have worked more on the navigation and the styling of the scanned result.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lisa-louise-project-nutrition.netlify.app/
